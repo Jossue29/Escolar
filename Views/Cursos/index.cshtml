@@ -1,0 +1,32 @@
+@model IEnumerable<Escolar.Models.Curso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cursos</h1>
+<p>
+    <a asp-action="Agregar">Crear Nuevo Curso</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @Html.DisplayNameFor(Model => Model.Nombre)
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Nombre)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@Item.Id">Editar</a>
+                    <a asp-action="Detalles" asp-route-id="@Item.Id">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@Item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

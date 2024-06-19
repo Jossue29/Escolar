@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Escolar.Models;
 
-namespace MyMvcApp.Controllers
+namespace Escolar.Controllers
 {
     public class CursoController : Controller
     {

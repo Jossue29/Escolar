@@ -11,8 +11,9 @@ var conn = builder.Configuration.GetConnectionString("ConexionDb");
 builder.Services.AddDbContext<ContextoDb>( options =>
   options.UseMySql(conn, ServerVersion.AutoDetect(conn))
 );
-builder.Services.AddScoped<IrepositorioCurso, Cur>();
-builder.Services.AddScoped<IProductoRepositorio, ProductoRepositorio>();
+builder.Services.AddScoped<IrepositorioCurso, CursoRepositorio>();
+builder.Services.AddScoped<IrepositorioEstudiante, EstudianteRepositorio>();
+builder.Services.AddScoped<IRepositorioCursoEstudiante, CursoEstudianteRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

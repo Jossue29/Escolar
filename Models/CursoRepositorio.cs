@@ -22,7 +22,7 @@ namespace Escolar.Models
         // Obtener curso por ID
         public Curso ObtenerPorId(int id)
         {
-            return _contexto.Cursos.FirstOrDefault(curso => curso.Id == id);
+            return _contexto.Cursos.FirstOrDefault(Curso => Curso.Id == id);
         }
 
         // Agregar un nuevo curso

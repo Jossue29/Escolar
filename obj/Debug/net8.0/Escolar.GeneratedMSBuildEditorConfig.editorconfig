@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ELITEBOOK\OneDrive\Escritorio\Escolar
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Cursos/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29zXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

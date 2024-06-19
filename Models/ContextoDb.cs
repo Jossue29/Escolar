@@ -10,6 +10,8 @@ public class ContextoDb : DbContext
     public DbSet<Estudiante> Estudiantes { get; set; }
     public DbSet<Curso> Cursos { get; set; }
     public DbSet<CursoEstudiante> CursoEstudiantes { get; set; }
+    public DbSet<Profesor> Profesores { get; set; }   
+    public DbSet<Asignatura> Asignaturas { get; set; }  
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -28,5 +30,16 @@ public class ContextoDb : DbContext
             .HasOne(ce => ce.Estudiante)
             .WithMany(e => e.CursoEstudiantes)
             .HasForeignKey(ce => ce.EstudianteId);
+
+         modelBuilder.Entity<Asignatura>()
+                .HasOne(a => a.Profesor)
+                .WithMany(p => p.Asignaturas)
+                .HasForeignKey(a => a.ProfesorId);
+
+            // Configuración de la relación uno a muchos entre Curso y Asignatura
+            modelBuilder.Entity<Asignatura>()
+                .HasOne(a => a.Curso)
+                .WithMany()
+                .HasForeignKey(a => a.CursoId);
     }
 }
