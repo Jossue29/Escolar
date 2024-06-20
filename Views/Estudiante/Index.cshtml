@@ -1,17 +1,20 @@
-@model IEnumerable<Escolar.Models.Curso>
+@using Escolar.Models;
+@model IEnumerable<Escolar.Models.Estudiante>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Cursos</h1>
+<h1>Estudiante</h1>
 <p>
-    <a asp-action="Agregar">Crear Nuevo Curso</a>
+    <a asp-action="Agregar">Agregar Estudiante</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            @Html.DisplayNameFor(Model => Model.Nombre)
+            <th>@Html.DisplayNameFor(Model => Model.Nombre)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Fecha_Nacimiento)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Correo)</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +23,12 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => Item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Fecha_Nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Fecha_Nacimiento)
                 </td>
                 <td>
                     <a asp-action="Editar" asp-route-id="@Item.Id">Editar</a>

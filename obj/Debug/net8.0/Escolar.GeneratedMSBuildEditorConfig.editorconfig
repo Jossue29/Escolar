@@ -18,8 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ELITEBOOK\OneDrive\Escritorio\Escolar
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Cursos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29zXEluZGV4LmNzaHRtbA==
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Curso/Agregar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cQWdyZWdhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Curso/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Agregar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxBZ3JlZ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Home/Index.cshtml]
