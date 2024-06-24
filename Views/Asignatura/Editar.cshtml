@@ -1,14 +1,13 @@
-@using Microsoft.AspNetCore.Mvc.Rendering
-@using Escolar.Models;
-@model Escolar.Models.Asignatura
+@model MVCproyecto.Models.Asignatura;
 
 @{
-    ViewData["Title"] = "Agregar";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Agregar Nueva Asignatura</h1>
+<h1>Editar</h1>
 <h4>Asignatura</h4>
 <hr>
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Agregar" method="post" enctype="multipart/form-data" role="form" class="form-horizontal" novalidate>
@@ -35,12 +34,16 @@
             </div>
             <br>
             <div class="form-group">
-                <button type="submit" value="Crear" class="btn btn-primary">Crear</button>
+                <button type="submit" value="Guardar" class="btn btn-primary">Guardar</button>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Volver a la Lista</a>
+        <a asp-action="Index">Volver a la lista</a>
 </div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
