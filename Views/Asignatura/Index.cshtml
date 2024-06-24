@@ -1,0 +1,61 @@
+@using Escolar.Models
+@model IEnumerable<Escolar.Models.Asignatura>
+
+@{
+    ViewData["Title"] = "Índice de Asignaturas";
+}
+
+<h1>Asignaturas</h1>
+    <p>
+        <a asp-action="Agregar">Crear nueva asignatura</a>
+    </p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreAsignatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var asignatura in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => asignatura.NombreAsignatura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => asignatura.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => asignatura.Profesor.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => asignatura.Curso.Nombre)
+                </td>
+                <td>
+                        <a asp-action="Editar" asp-route-id="@asignatura.Id">Editar</a> |
+                        <a asp-action="Detalles" asp-route-id="@asignatura.Id">Detalles</a> |
+                        <a asp-action="Eliminar" asp-route-id="@asignatura.Id">Eliminar</a>
+@*                     
+                    else
+                    {
+                        <a asp-action="Detalles" asp-route-id="@asignatura.Id">Detalles</a>
+                    } *@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

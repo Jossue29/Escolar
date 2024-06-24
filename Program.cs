@@ -14,6 +14,8 @@ builder.Services.AddDbContext<ContextoDb>( options =>
 builder.Services.AddScoped<IrepositorioCurso, CursoRepositorio>();
 builder.Services.AddScoped<IrepositorioEstudiante, EstudianteRepositorio>();
 builder.Services.AddScoped<IRepositorioCursoEstudiante, CursoEstudianteRepositorio>();
+builder.Services.AddScoped<IrepositorioProfesor, ProfesorRepositorio>();
+builder.Services.AddScoped<IrepositorioAsignatura, AsignaturaRepositorio>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

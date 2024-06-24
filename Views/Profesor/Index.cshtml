@@ -1,0 +1,37 @@
+@using Escolar.Models;
+@model IEnumerable<Escolar.Models.Profesor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Profesor</h1>
+<p>
+    <a asp-action="Agregar">Agregar Profesor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(Model => Model.Nombre)</th>
+            <th>@Html.DisplayNameFor(Model => Model.Especialidad)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Especialidad)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@Item.Id">Editar</a>
+                    <a asp-action="Detalles" asp-route-id="@Item.Id">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@Item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

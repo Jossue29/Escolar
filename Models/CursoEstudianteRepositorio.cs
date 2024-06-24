@@ -32,23 +32,22 @@ namespace Escolar.Models
         }
 
         // Agregar un nuevo registro a CursoEstudiante
-        public void Agregar(CursoEstudiante cursoEstudiante)
-        {
-             var existente = _contexto.CursoEstudiantes
-             .FirstOrDefault(ce => ce.CursoId == cursoEstudiante.CursoId && ce.EstudianteId == cursoEstudiante.EstudianteId);
-    
-             if (existente == null)
-            {
-               _contexto.CursoEstudiantes.Add(cursoEstudiante);
-               _contexto.SaveChanges();
-            }
-            
-              else
-            {
-        // Puedes lanzar una excepción, registrar un mensaje o manejarlo según tus necesidades.
-    //  throw new Exception("La relación ya existe.");
-            }
-        }
+       public void Agregar(CursoEstudiante cursoEstudiante)
+{
+    var existente = _contexto.CursoEstudiantes
+        .FirstOrDefault(ce => ce.CursoId == cursoEstudiante.CursoId && ce.EstudianteId == cursoEstudiante.EstudianteId);
+
+    if (existente == null)
+    {
+        _contexto.CursoEstudiantes.Add(cursoEstudiante);
+        _contexto.SaveChanges();
+    }
+    else
+    {
+        throw new InvalidOperationException("La relación entre el curso y el estudiante ya existe.");
+    }
+}
+
 
 
         // Actualizar un registro existente en CursoEstudiante
