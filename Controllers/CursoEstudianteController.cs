@@ -1,93 +1,99 @@
-using Escolar.Models; // Asegúrate de incluir el namespace correcto de tu repositorio
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-
-namespace Escolar.Controllers
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Escolar.Models;
+public class CursoEstudianteController : Controller
 {
-    public class CursoEstudianteController : Controller
+    private readonly IRepositorioCursoEstudiante _repositorioCursoEstudiante;
+    private readonly IrepositorioCurso _repositorioCurso;
+    private readonly IrepositorioEstudiante _repositorioEstudiante;
+
+    public CursoEstudianteController(IRepositorioCursoEstudiante repositorioCursoEstudiante,
+                                     IrepositorioCurso repositorioCurso,
+                                     IrepositorioEstudiante repositorioEstudiante)
     {
-        private readonly IRepositorioCursoEstudiante _repositorioCursoEstudiante;
+        _repositorioCursoEstudiante = repositorioCursoEstudiante;
+        _repositorioCurso = repositorioCurso;
+        _repositorioEstudiante = repositorioEstudiante;
+    }
 
-        public CursoEstudianteController(IRepositorioCursoEstudiante repositorioCursoEstudiante)
+    public IActionResult Index()
+    {
+        var cursosEstudiantes = _repositorioCursoEstudiante.MostrarTodos();
+        return View(cursosEstudiantes);
+    }
+
+    public IActionResult Detalles(int idEstudiante, int idCurso)
+    {
+        var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
+        if (cursoEstudiante == null)
         {
-            _repositorioCursoEstudiante = repositorioCursoEstudiante;
+            return NotFound();
         }
+        return View(cursoEstudiante);
+    }
 
-        public IActionResult Index()
-        {
-            var cursosEstudiantes = _repositorioCursoEstudiante.MostrarTodos();
-            return View(cursosEstudiantes);
-        }
+    public IActionResult Agregar()
+    {
+        ViewData["Cursos"] = _repositorioCurso.MostrarTodos();
+        ViewData["Estudiantes"] = _repositorioEstudiante.MostrarTodos();
+        return View();
+    }
 
-        public IActionResult Detalles(int idEstudiante, int idCurso)
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Agregar(CursoEstudiante cursoEstudiante)
+    {
+        if (ModelState.IsValid)
         {
-            var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
-            if (cursoEstudiante == null)
-            {
-                return NotFound();
-            }
-            return View(cursoEstudiante);
-        }
-
-        public IActionResult Agregar()
-        {
-            // Implementación de lógica para mostrar formulario de agregar
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Agregar(CursoEstudiante cursoEstudiante)
-        {
-            if (ModelState.IsValid)
-            {
-                _repositorioCursoEstudiante.Agregar(cursoEstudiante);
-                _repositorioCursoEstudiante.Guardar();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(cursoEstudiante);
-        }
-
-        public IActionResult Editar(int idEstudiante, int idCurso)
-        {
-            var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
-            if (cursoEstudiante == null)
-            {
-                return NotFound();
-            }
-            return View(cursoEstudiante);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Editar(CursoEstudiante cursoEstudiante)
-        {
-            if (ModelState.IsValid)
-            {
-                _repositorioCursoEstudiante.Actualizar(cursoEstudiante);
-                _repositorioCursoEstudiante.Guardar();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(cursoEstudiante);
-        }
-
-        public IActionResult Eliminar(int idEstudiante, int idCurso)
-        {
-            var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
-            if (cursoEstudiante == null)
-            {
-                return NotFound();
-            }
-            return View(cursoEstudiante);
-        }
-
-        [HttpPost, ActionName("Eliminar")]
-        [ValidateAntiForgeryToken]
-        public IActionResult ConfirmarEliminar(int idEstudiante, int idCurso)
-        {
-            _repositorioCursoEstudiante.Eliminar(idEstudiante, idCurso);
+            _repositorioCursoEstudiante.Agregar(cursoEstudiante);
             _repositorioCursoEstudiante.Guardar();
             return RedirectToAction(nameof(Index));
         }
+        ViewData["Cursos"] = _repositorioCurso.MostrarTodos();
+        ViewData["Estudiantes"] = _repositorioEstudiante.MostrarTodos();
+        return View(cursoEstudiante);
+    }
+
+    public IActionResult Editar(int idEstudiante, int idCurso)
+    {
+        var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
+        if (cursoEstudiante == null)
+        {
+            return NotFound();
+        }
+        return View(cursoEstudiante);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Editar(CursoEstudiante cursoEstudiante)
+    {
+        if (ModelState.IsValid)
+        {
+            _repositorioCursoEstudiante.Actualizar(cursoEstudiante);
+            _repositorioCursoEstudiante.Guardar();
+            return RedirectToAction(nameof(Index));
+        }
+        return View(cursoEstudiante);
+    }
+
+    public IActionResult Eliminar(int idEstudiante, int idCurso)
+    {
+        var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
+        if (cursoEstudiante == null)
+        {
+            return NotFound();
+        }
+        return View(cursoEstudiante);
+    }
+
+    [HttpPost, ActionName("Eliminar")]
+    [ValidateAntiForgeryToken]
+    public IActionResult ConfirmarEliminar(int idEstudiante, int idCurso)
+    {
+        _repositorioCursoEstudiante.Eliminar(idEstudiante, idCurso);
+        _repositorioCursoEstudiante.Guardar();
+        return RedirectToAction(nameof(Index));
     }
 }
