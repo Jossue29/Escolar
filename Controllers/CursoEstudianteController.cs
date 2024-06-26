@@ -57,26 +57,31 @@ public class CursoEstudianteController : Controller
 
     public IActionResult Editar(int idEstudiante, int idCurso)
     {
-        var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
-        if (cursoEstudiante == null)
-        {
-            return NotFound();
-        }
-        return View(cursoEstudiante);
+    var cursoEstudiante = _repositorioCursoEstudiante.ObtenerPorIDs(idEstudiante, idCurso);
+    if (cursoEstudiante == null)
+    {
+        return NotFound();
+    }
+    ViewBag.Estudiantes = new SelectList(_repositorioEstudiante.MostrarTodos(), "Id", "Nombre", cursoEstudiante.EstudianteId);
+    ViewBag.Cursos = new SelectList(_repositorioCurso.MostrarTodos(), "Id", "Nombre", cursoEstudiante.CursoId);
+    return View(cursoEstudiante);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Editar(CursoEstudiante cursoEstudiante)
     {
-        if (ModelState.IsValid)
-        {
-            _repositorioCursoEstudiante.Actualizar(cursoEstudiante);
-            _repositorioCursoEstudiante.Guardar();
-            return RedirectToAction(nameof(Index));
-        }
-        return View(cursoEstudiante);
+    if (ModelState.IsValid)
+    {
+        _repositorioCursoEstudiante.Actualizar(cursoEstudiante);
+        _repositorioCursoEstudiante.Guardar();
+        return RedirectToAction(nameof(Index));
     }
+    ViewBag.Estudiantes = new SelectList(_repositorioEstudiante.MostrarTodos(), "Id", "Nombre", cursoEstudiante.EstudianteId);
+    ViewBag.Cursos = new SelectList(_repositorioCurso.MostrarTodos(), "Id", "Nombre", cursoEstudiante.CursoId);
+    return View(cursoEstudiante);
+    }
+
 
     public IActionResult Eliminar(int idEstudiante, int idCurso)
     {

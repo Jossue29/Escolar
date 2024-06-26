@@ -1,4 +1,4 @@
-@model MVCproyecto.Models.Asignatura;
+@model Escolar.Models.Asignatura;
 
 @{
     ViewData["Title"] = "Editar";
@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Agregar" method="post" enctype="multipart/form-data" role="form" class="form-horizontal" novalidate>
+        <form asp-action="Editar" method="post" enctype="multipart/form-data" role="form" class="form-horizontal" novalidate>
             <div>
                 <label asp-for="NombreAsignatura" class="control-label"></label>
                 <input asp-for="NombreAsignatura" class="form-control">

@@ -38,6 +38,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29Fc3R1ZGlhbnRlXEFncmVnYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/CursoEstudiante/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29Fc3R1ZGlhbnRlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/CursoEstudiante/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29Fc3R1ZGlhbnRlXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/CursoEstudiante/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29Fc3R1ZGlhbnRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,12 +54,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cQWdyZWdhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Curso/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Curso/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Curso/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3Vyc29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Agregar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxBZ3JlZ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0dWRpYW50ZVxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Estudiante/Index.cshtml]
@@ -68,6 +92,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Profesor/Agregar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzb3JcQWdyZWdhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Profesor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzb3JcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Profesor/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzb3JcRWRpdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ELITEBOOK/OneDrive/Escritorio/Escolar/Views/Profesor/Index.cshtml]

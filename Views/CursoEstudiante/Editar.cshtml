@@ -1,0 +1,43 @@
+@model Escolar.Models.CursoEstudiante
+
+@{
+    ViewData["Title"] = "Editar Curso-Estudiante";
+}
+
+<h1>Editar Curso-Estudiante</h1>
+<h4>Curso-Estudiante</h4>
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar" method="post" enctype="multipart/form-data" role="form" class="form-horizontal" novalidate>
+            <input type="hidden" asp-for="EstudianteId" />
+            <input type="hidden" asp-for="CursoId" />
+            
+            <div class="form-group">
+                @Html.LabelFor(m => m.Estudiante)
+                @Html.DropDownListFor(m => m.EstudianteId, (SelectList)ViewBag.Estudiantes, "Seleccione un Estudiante", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.EstudianteId, "", new { @class = "text-danger" })
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(m => m.Curso)
+                @Html.DropDownListFor(m => m.CursoId, (SelectList)ViewBag.Cursos, "Seleccione un Curso", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.CursoId, "", new { @class = "text-danger" })
+            </div>
+
+            <br>
+            <div class="form-group">
+                <button type="submit" value="Guardar" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

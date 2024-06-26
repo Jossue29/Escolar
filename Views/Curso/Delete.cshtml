@@ -1,12 +1,12 @@
-@model Escolar.Models.Asignatura;
+@model Escolar.Models.Curso;
 
 @{
     ViewData["title"] = "Eliminar Datos";
 }
 
-<h2>Eliminar Asignatura</h2>
+<h2>Eliminar Curso</h2>
 
-<p>Esta seguro de eliminar la Asignatura "@Model.NombreAsignatura"</p>
+<p>Esta seguro de eliminar el curso "@Model.Nombre"</p>
 <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
     <button type="submit">Si, Eliminar</button>
     <button type="button" onclick="javascipts:history.back();">Cancelar</button>

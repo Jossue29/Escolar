@@ -42,10 +42,9 @@
                         <span>Estudiante no asignado</span>
                     }
                 </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.CursoId,@item.EstudianteId">Detalles</a> |
-                    <a asp-action="Edit" asp-route-id="@item.CursoId,@item.EstudianteId">Editar</a> |
-                    <a asp-action="Delete" asp-route-id="@item.CursoId,@item.EstudianteId">Eliminar</a>
+               <td>
+                    <a asp-action="Editar" asp-route-idEstudiante="@item.EstudianteId" asp-route-idCurso="@item.CursoId">Editar</a> |
+                    <a asp-action="Delete" asp-route-idEstudiante="@item.EstudianteId" asp-route-idCurso="@item.CursoId">Eliminar</a>
                 </td>
             </tr>
         }
