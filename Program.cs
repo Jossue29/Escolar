@@ -1,5 +1,6 @@
 using Escolar.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ var conn = builder.Configuration.GetConnectionString("ConexionDb");
 builder.Services.AddDbContext<ContextoDb>( options =>
   options.UseMySql(conn, ServerVersion.AutoDetect(conn))
 );
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ContextoDb>();
 builder.Services.AddScoped<IrepositorioCurso, CursoRepositorio>();
 builder.Services.AddScoped<IrepositorioEstudiante, EstudianteRepositorio>();
 builder.Services.AddScoped<IRepositorioCursoEstudiante, CursoEstudianteRepositorio>();
