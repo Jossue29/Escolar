@@ -6,9 +6,12 @@
 }
 
 <h1>Profesor</h1>
+@if(User.Identity.IsAuthenticated && @User.IsInRole("Administrador"))
+{
 <p>
     <a asp-action="Agregar">Agregar Profesor</a>
 </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -26,10 +29,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => Item.Especialidad)
                 </td>
+                @if(User.Identity.IsAuthenticated && @User.IsInRole("Administrador"))
+                {
                 <td>
                     <a asp-action="Editar" asp-route-id="@Item.Id">Editar</a> |
                     <a asp-action="Delete" asp-route-id="@Item.Id">Eliminar</a>
                 </td>
+                }
             </tr>
         }
     </tbody>

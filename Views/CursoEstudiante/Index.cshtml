@@ -6,10 +6,12 @@
 }
 
 <h1>Índice de CursoEstudiantes</h1>
+@if(User.Identity.IsAuthenticated && @User.IsInRole("Administrador"))
+{
 <p>
     <a asp-action="Agregar">Asignar Estudiantes a cursos</a>
 </p>
-
+}
 <table class="table">
     <thead>
         <tr>
@@ -42,10 +44,13 @@
                         <span>Estudiante no asignado</span>
                     }
                 </td>
+                @if(User.Identity.IsAuthenticated && @User.IsInRole("Administrador"))
+                {
                <td>
                     <a asp-action="Editar" asp-route-idEstudiante="@item.EstudianteId" asp-route-idCurso="@item.CursoId">Editar</a> |
                     <a asp-action="Delete" asp-route-idEstudiante="@item.EstudianteId" asp-route-idCurso="@item.CursoId">Eliminar</a>
                 </td>
+                }
             </tr>
         }
     </tbody>
