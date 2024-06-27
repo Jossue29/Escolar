@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Escolar.Models;
+using Microsoft.AspNetCore.Authorization;
 public class CursoEstudianteController : Controller
 {
+    
     private readonly IRepositorioCursoEstudiante _repositorioCursoEstudiante;
     private readonly IrepositorioCurso _repositorioCurso;
     private readonly IrepositorioEstudiante _repositorioEstudiante;
@@ -16,7 +18,7 @@ public class CursoEstudianteController : Controller
         _repositorioCurso = repositorioCurso;
         _repositorioEstudiante = repositorioEstudiante;
     }
-
+    [Authorize]
     public IActionResult Index()
     {
         var cursosEstudiantes = _repositorioCursoEstudiante.MostrarTodos();

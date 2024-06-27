@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Escolar.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Escolar.Controllers
 {
+    [Authorize]
     public class AsignaturaController : Controller
     {
         private readonly IrepositorioAsignatura _InstanciaAsignaturaRepo;
